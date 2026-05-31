@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Reddit Game Jobs Crawler
+Reddit Game Jobs Monitor
 Scrapes game dev job/collaboration posts from multiple subreddits
 Stores results in Notion and sends summary via Telegram
 """
@@ -21,7 +21,7 @@ KEYWORDS = [
 ]
 DAYS_BACK = 7
 NOTION_TOKEN = open(os.path.expanduser('~/.config/notion/api_key')).read().strip()
-NOTION_DATABASE_ID = '36f07dcc-8765-81b1-8316-cae3c8a6961b'
+NOTION_DATABASE_ID = 'personal data' //Put your database ID
 
 def load_config():
     config_path = os.path.expanduser('~/.config/reddit-crawler/config.json')
@@ -34,7 +34,7 @@ def create_reddit_instance():
     reddit = praw.Reddit(
         client_id="",
         client_secret="",
-        user_agent="Yaya_Bot_Crawler/1.0 (game jobs scraper)",
+        user_agent="[App Name]/1.0 (game jobs scraper)", //Put your user agent app name in [App Name]
         username=config['username'],
         password=config['password']
     )
